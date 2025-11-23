@@ -29,3 +29,22 @@ Your output files must be structured exactly as described - output files for all
 Note:
 Your code will only be tested on valid files in the format shown in the 4 example files in this folder - you do not need to validate any data.
 '''
+filename = str(input("What is the filename of the student file?"))
+with open(filename,"r") as infile:
+     for line in infile:
+          fileline = []
+          infile.readline
+          for chr in line:
+               fileline.append(chr)
+          ID = f"{fileline[0]}{fileline[1]}{fileline[2]}{fileline[3]}{fileline[4]}"
+          numbers=[]
+          count = 0
+          finished = False
+          while finished = False:
+               for chr in line:
+                    if chr 
+
+          
+
+
+    
