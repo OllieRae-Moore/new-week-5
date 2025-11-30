@@ -30,21 +30,48 @@ Note:
 Your code will only be tested on valid files in the format shown in the 4 example files in this folder - you do not need to validate any data.
 '''
 filename = str(input("What is the filename of the student file?"))
+outputfile = filename + "_out.csv"
+averages = []
+grades = []
+IDs = []
 with open(filename,"r") as infile:
+     infile.readline()
+     count = 0
      for line in infile:
+          line = line.strip()
           fileline = []
           infile.readline
           for chr in line:
                fileline.append(chr)
           ID = f"{fileline[0]}{fileline[1]}{fileline[2]}{fileline[3]}{fileline[4]}"
-          numbers=[]
-          count = 0
-          finished = False
-          while finished = False:
-               for chr in line:
-                    if chr 
-
+          IDs.insert(count, ID)
+          parts = line.split(",")
+          numbers = [int(chr) for chr in parts[1:] if chr.strip()]
+          total = 0
+          for x in numbers:
+               total+= x
+          total = float(total)
+          average = round(total / len(numbers), 2)
+          averages.insert(count, average)
+          if average >= 70:
+               grade = "1"
+          elif average >= 60:
+               grade = "2:1"
+          elif average >= 50:
+               grade = "2:2"
+          elif average >= 40:
+               grade = "3"
+          else:
+               grade = "F"
+          grades.insert(count, grade)
+          count += 1
           
+with open(outputfile,"w") as outfile:
+     length = len(IDs)
+     for i in range(length):
+          outfile.write(f"{IDs[i]},{averages[i]},{grades[i]}\n")
+
+
 
 
     
